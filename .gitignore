@@ -1,0 +1,14 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+/.idea/
+springboot-practice.iml
+/sb-api/sb-api.iml
+/sb-common/sb-common.iml
+/sb-core/sb-core.iml
+/sb-web/sb-web.iml
+
+/sb-web/target/
+/sb-core/target/
+/sb-common/target/
+/sb-api/target/
+
