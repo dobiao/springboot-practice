@@ -17,22 +17,22 @@ public class HelloController {
 
 
     @RequestMapping(value = "/hello1")
-    public String hello(@RequestParam(value = "name", required = true) String name) {
+    public String hello(@RequestParam(value = "name", required = false) String name) {
         String result = "hello  " + name;
         System.out.println(result);
         return result;
     }
 
     @RequestMapping(value = "/world")
-    public String world(@RequestParam(value = "arg", required = true) String arg){
+    public String world(@RequestParam(value = "arg", required = true) String arg) {
         String result = "world  " + arg;
         System.out.println(result);
         return result;
     }
 
-    @RequestMapping(value="/annotation")
-    @RedisCache(type=String.class)
-    public String annotation(){
+    @RequestMapping(value = "/annotation")
+    @RedisCache(type = String.class)
+    public String annotation() {
         return "annotation";
     }
 
