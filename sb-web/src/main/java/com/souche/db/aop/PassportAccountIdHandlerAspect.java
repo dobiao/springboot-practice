@@ -3,6 +3,7 @@ package com.souche.db.aop;
 
 import com.souche.db.annotation.PassportAccountIdHandler;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,8 +37,12 @@ public class PassportAccountIdHandlerAspect {
      * @return
      * @throws Throwable
      */
+
+    @Pointcut("@annotation(com.souche.db.annotation.PassportAccountIdHandler)")
     public Object passportAccountIdHandler(ProceedingJoinPoint joinPoint) throws Throwable {
         // 获取方法信息
+        System.out.println("long");
+
         MethodSignature ms = (MethodSignature) joinPoint.getSignature();
         Method method = ms.getMethod();
 
