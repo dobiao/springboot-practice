@@ -32,21 +32,29 @@ public class UserController {
 
     @RequestMapping("/test1")
     @ResponseBody
+
     @Validate("zxc")
-    @MethodCache(expire = 10)
     public User getUserInfo1(@RequestParam("name") String name) {
         System.out.println(name);
-        return new User();
+        return userService.getUserInfo();
     }
 
     @RequestMapping("/test2")
+
     @ResponseBody
     public User getUserInfo2() {
-        System.out.println("dddff");
+
         User u = new User();
         u.setName("andy");
         userService.createUser(u);
         return new User();
+    }
 
+    @RequestMapping("/test3")
+    @ResponseBody
+    @MethodCache(expire = 10)
+    public String getUserInfo3(@RequestParam("name") String name) {
+        System.out.println(name);
+        return userService.getUserInfo().getName();
     }
 }
