@@ -9,6 +9,7 @@ import com.google.common.collect.Maps;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.io.Serializable;
@@ -23,6 +24,8 @@ import java.util.concurrent.TimeUnit;
  *
  * @author victorhan
  */
+
+@Service
 public class Guavacached implements CacheService {
 
     private static Logger logger = LoggerFactory.getLogger(Guavacached.class);
@@ -196,7 +199,7 @@ public class Guavacached implements CacheService {
 
     public static void main(String[] args) {
         try {
-            Guavacached guavacached = new Guavacached();
+            CacheService guavacached = new Guavacached();
             guavacached.set("test", "test value",5);
             Thread.sleep(1000);
             System.out.println("after sleep 1 sec : " + guavacached.get("test"));
