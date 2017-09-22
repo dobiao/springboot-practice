@@ -79,7 +79,14 @@ public class Guavacached implements CacheService {
         if (StringUtils.isEmpty(key) || !enable) {
             return null;
         }
-        LoadingCache<String, String> cache = getCache(key);
+
+        LoadingCache<String, String> cache;
+
+        try {
+            cache = getCache(key);
+        } catch (Exception e) {
+            return null;
+        }
         if (cache != null) {
             try {
                 return cache.get(key);
@@ -200,7 +207,15 @@ public class Guavacached implements CacheService {
     public static void main(String[] args) {
         try {
             CacheService guavacached = new Guavacached();
-            guavacached.set("test", "test value",5);
+
+
+
+            System.out.println(guavacached.get("test"));
+
+
+            guavacached.set("test", "test value", 5);
+
+
             Thread.sleep(1000);
             System.out.println("after sleep 1 sec : " + guavacached.get("test"));
             Thread.sleep(10000);

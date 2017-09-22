@@ -1,7 +1,6 @@
 package com.souche.db.controller;
 
 import com.souche.db.annotation.MethodCache;
-import com.souche.db.annotation.PassportAccountIdHandler;
 import com.souche.db.annotation.Validate;
 import com.souche.db.model.User;
 import com.souche.db.service.UserService;
@@ -11,8 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.List;
 
 @Controller
 public class UserController {
@@ -33,7 +30,6 @@ public class UserController {
         return user;
     }
 
-
     @RequestMapping("/test1")
     @ResponseBody
     @Validate("zxc")
@@ -43,19 +39,14 @@ public class UserController {
         return new User();
     }
 
-
     @RequestMapping("/test2")
     @ResponseBody
     public User getUserInfo2() {
         System.out.println("dddff");
-
         User u = new User();
         u.setName("andy");
-
         userService.createUser(u);
         return new User();
 
     }
-
-
 }
