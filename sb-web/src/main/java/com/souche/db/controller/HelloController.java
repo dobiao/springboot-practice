@@ -1,6 +1,5 @@
 package com.souche.db.controller;
 
-import com.souche.db.annotation.RedisCache;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +30,6 @@ public class HelloController {
     }
 
     @RequestMapping(value = "/annotation")
-    @RedisCache(type = String.class)
     public String annotation() {
         return "annotation";
     }
