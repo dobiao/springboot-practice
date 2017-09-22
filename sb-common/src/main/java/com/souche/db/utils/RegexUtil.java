@@ -1,5 +1,7 @@
 package com.souche.db.utils;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -221,7 +223,7 @@ public class RegexUtil {
      * @param decimal       小数部分的最大长度
      */
     public static boolean decimals(String decimals,int decimal) {
-        if(StringUtil.isEmpty(decimals) || ".".equals(decimals)){
+        if(StringUtils.isEmpty(decimals) || ".".equals(decimals)){
             return false;
         } 
         final String regex = "^[+-]?(\\d*)?(\\.)?\\d{0,"+decimal+"}$";
