@@ -1,4 +1,4 @@
-package src.main.java.com.souche.db.service;
+package com.souche.db.service;
 
 /**
  * Created by dubiao on 2017/9/22.
