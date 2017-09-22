@@ -1,5 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
+.properties
 /.idea/
 springboot-practice.iml
 /sb-api/sb-api.iml

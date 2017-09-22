@@ -41,9 +41,15 @@ public class UserController {
 
     @RequestMapping("/test2")
     @ResponseBody
-    public User getUserInfo2(@PassportAccountIdHandler Long id) {
+    public User getUserInfo2() {
         System.out.println("dddff");
+
+        User u = new User();
+        u.setName("andy");
+
+        userService.createUser(u);
         return new User();
+
     }
 
 }
