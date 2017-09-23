@@ -94,11 +94,9 @@ http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-creat
 
 将你的启动类改成以上样式。 mvn package 打包，并把target下的war包部署到TOMCAT即可。
 
-##PS
-
-#####描述一定要能够表意，而不是 修改了bug 这样的模糊描述
-#####请为每个更改点都赋予一个 commit，不要把 commit 当 push 用
-	```
+###PS
+######描述一定要能够表意，而不是 修改了bug 这样的模糊描述
+######请为每个更改点都赋予一个 commit，不要把 commit 当 push 用
 	•	feat：新功能（feature）
 	•	fix：修补bug
 	•	docs：文档（documentation）
@@ -106,10 +104,8 @@ http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-creat
 	•	refactor：重构（即不是新增功能，也不是修改bug的代码变动）
 	•	test：增加测试2
 	•	chore：构建过程或辅助工具的变动
-	```
 ###example：
 ####fix：修复aop失效问题
 ####doc：添加readme说明
-
 
 ## 任何新的需求建议，bug提交，贡献请加入联系我，QQ：909025298
