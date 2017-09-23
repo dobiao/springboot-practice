@@ -6,4 +6,3 @@
 ####MethodCache，缓存方法的返回值，目前功能还需要调试
 ####PassportAccountIdHandler，自动转换入参
 ####Validate校验请求参数的token
-何新的需求建议，bug提交，贡献请加入联系我，QQ：909025298
