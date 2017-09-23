@@ -80,13 +80,14 @@ public class Guavacached implements CacheService {
             return null;
         }
 
-        LoadingCache<String, String> cache = getCache(key);;
+        LoadingCache<String, String> cache = getCache(key);
 
         if (cache != null) {
             try {
                 return cache.get(key);
             } catch (Exception e) {
                 logger.error("guava cache ExecutionException:" + e.getCause());
+				return null;
             }
         }
         return null;
