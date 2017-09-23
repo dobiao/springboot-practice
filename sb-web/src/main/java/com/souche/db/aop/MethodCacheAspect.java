@@ -34,7 +34,7 @@ public class MethodCacheAspect {
     @Around("@annotation(com.souche.db.annotation.MethodCache)")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         String cacheKey = getCacheKey(joinPoint);
-        String s = cacheService.get(KEY);
+        String s = cacheService.get(cacheKey);
         if (s != null) {
 
             //logger.info("cache hit，key [{}]", cacheKey);
@@ -46,7 +46,7 @@ public class MethodCacheAspect {
                 //logger.error("fail to get data from source，key [{}]", cacheKey);
             } else {
                 MethodCache methodCache = getAnnotation(joinPoint, MethodCache.class);
-                cacheService.set(KEY, cacheKey, methodCache.expire());
+                cacheService.set(cacheKey, result.toString(), methodCache.expire());
             }
             return result;
         }
