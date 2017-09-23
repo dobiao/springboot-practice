@@ -1,19 +1,8 @@
 #SpringBoot实战项目
 
-## 目前整合了mybatis和swagger
 
 ##启动应用步骤：
-#####1、本地新建MySQL数据库demo，导入数据表（下面有create user table）;
-#####2、运行 
-```
-mvn spring-boot:run
-log出现：Tomcat started on port(s): 8080 (http)，证明启动成功
-```
-##访问API文档:
-http://localhost:8080/swagger/index.html 即可在线查看API手册和调试API。
-
-
-##创建数据库
+#####1、新建库sbpractice，按照如下脚本初始化数据库;
 create user table:
 ```
 DROP TABLE IF EXISTS `user`;
@@ -37,6 +26,14 @@ VALUES
 UNLOCK TABLES;
 
 ```
+#####2、运行Application.java 
+```
+mvn spring-boot:run
+log出现：SpringBoot Start Success，说明启动成功
+```
+##访问API文档:
+http://localhost:8080/swagger/index.html 即可在线查看API手册和调试API。
+
 
 
 ## 如果部署到Tomcat中，需要稍微修改一下
@@ -101,6 +98,7 @@ http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-creat
 
 #####描述一定要能够表意，而不是 修改了bug 这样的模糊描述
 #####请为每个更改点都赋予一个 commit，不要把 commit 当 push 用
+	```
 	•	feat：新功能（feature）
 	•	fix：修补bug
 	•	docs：文档（documentation）
@@ -108,6 +106,7 @@ http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-creat
 	•	refactor：重构（即不是新增功能，也不是修改bug的代码变动）
 	•	test：增加测试2
 	•	chore：构建过程或辅助工具的变动
+	```
 ###example：
 ####fix：修复aop失效问题
 ####doc：添加readme说明
