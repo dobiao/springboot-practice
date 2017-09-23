@@ -18,6 +18,7 @@ public class B {
         stringArrayList.add("E");
         stringArrayList.add("F");
 
+
         List<String> newList = stringArrayList.subList(0, 3);
 
         System.out.println(stringArrayList);
