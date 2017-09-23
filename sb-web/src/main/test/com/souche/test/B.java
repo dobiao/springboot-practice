@@ -16,7 +16,7 @@ public class B {
         stringArrayList.add("C");
         stringArrayList.add("D");
         stringArrayList.add("E");
-        stringArrayList.add("F");
+        stringArrayList.add("F1");
 
 
         List<String> newList = stringArrayList.subList(0, 3);
