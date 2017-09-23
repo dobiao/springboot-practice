@@ -94,7 +94,7 @@ http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-creat
 
 将你的启动类改成以上样式。 mvn package 打包，并把target下的war包部署到TOMCAT即可。
 
-###PS
+##提交规范：
 ######描述一定要能够表意，而不是 修改了bug 这样的模糊描述
 ######请为每个更改点都赋予一个 commit，不要把 commit 当 push 用
 	•	feat：新功能（feature）
