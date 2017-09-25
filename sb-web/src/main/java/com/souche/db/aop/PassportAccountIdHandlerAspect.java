@@ -49,7 +49,6 @@ public class PassportAccountIdHandlerAspect {
     @Around("aspect()")
     public Object passportAccountIdHandler(ProceedingJoinPoint joinPoint) throws Throwable {
         // 获取方法信息
-        System.out.println("long");
 
         MethodSignature ms = (MethodSignature) joinPoint.getSignature();
         Method method = ms.getMethod();

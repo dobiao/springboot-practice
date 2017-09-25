@@ -23,7 +23,6 @@ import java.lang.reflect.Method;
 @Slf4j
 public class MethodCacheAspect {
 
-
     @Autowired
     private CacheService cacheService;
 
@@ -35,7 +34,6 @@ public class MethodCacheAspect {
         String cacheKey = getCacheKey(joinPoint);
         String s = cacheService.get(cacheKey);
         if (s != null) {
-
             log.info("cache hit，key: [{}],value [{}]", cacheKey,s);
             return s;
         } else {

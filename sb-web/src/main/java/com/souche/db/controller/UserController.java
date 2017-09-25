@@ -21,8 +21,8 @@ public class UserController {
 
     @RequestMapping("/getUserInfo")
     @ResponseBody
-    public User getUserInfo() {
-        User user = userService.getUserInfo();
+    public User getUserInfo(@RequestParam("age") Integer age) {
+        User user = userService.getUserInfo(age);
         if (user != null) {
             log.info("userName" + user.getName());
         }
@@ -31,15 +31,13 @@ public class UserController {
 
     @RequestMapping("/test1")
     @ResponseBody
-
     @Validate("zxc")
-    public User getUserInfo1(@RequestParam("name") String name) {
-        log.info("userName",name);
-        return userService.getUserInfo();
+    public User getUserInfo1(@RequestParam("age") Integer age) {
+        log.info("age[{}]", age);
+        return userService.getUserInfo(age);
     }
 
     @RequestMapping("/test2")
-
     @ResponseBody
     public User getUserInfo2() {
 
@@ -52,8 +50,7 @@ public class UserController {
     @RequestMapping("/test3")
     @ResponseBody
     @MethodCache(expire = 10)
-    public String getUserInfo3(@RequestParam("name") String name,@RequestParam("year") String year) {
-        log.info("name [{}]",name);
-        return userService.getUserInfo().getName();
+    public String getUserInfo3(@RequestParam("age") Integer age) {
+        return userService.getUserInfo(age).getName();
     }
 }
