@@ -108,4 +108,4 @@ http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-creat
 ####fix：修复aop失效问题
 ####doc：添加readme说明
 
-## 任何新的需求建议，bug提交，贡献请加入联系我，QQ：909025298
+## 任何新的需求建议，bug提交，贡献请加入QQ群：点击链接加入群【springboot/cloud学习小组】：https://jq.qq.com/?_wv=1027&k=5tcKNzM
