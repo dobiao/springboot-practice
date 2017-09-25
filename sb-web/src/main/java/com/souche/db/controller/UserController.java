@@ -52,7 +52,7 @@ public class UserController {
 
     @RequestMapping("/test3")
     @ResponseBody
-    @MethodCache(expire = 15)
+    @MethodCache(expire = 10)
     public String getUserInfo3(@RequestParam("name") String name,@RequestParam("year") String year) {
         System.out.println(name);
         return userService.getUserInfo().getName();
