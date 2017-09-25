@@ -2,12 +2,15 @@ package com.souche.db.aop;
 
 
 import com.souche.db.annotation.PassportAccountIdHandler;
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import org.thymeleaf.util.StringUtils;
 
 import java.lang.annotation.Annotation;
@@ -21,9 +24,12 @@ import java.util.List;
  * @author wb-wsp312690
  * @Date 2017-9-15 17:28:57
  */
+@Aspect
+@Component
+@Slf4j
 public class PassportAccountIdHandlerAspect {
 
-    private static final Logger logger = LoggerFactory.getLogger(Logger.class);
+   
 
     //private PersonRemoteService personRemoteService;
 
@@ -105,7 +111,7 @@ public class PassportAccountIdHandlerAspect {
 
 
             } catch (RuntimeException e) {
-                logger.error("passportAccountId convert to accountId error", e);
+                log.error("passportAccountId convert to accountId error", e);
             }
         }
         return args;
@@ -150,7 +156,7 @@ public class PassportAccountIdHandlerAspect {
                         }
                     }
                 } catch (Exception e) {
-                    logger.error("passportAccountId convert to accountId error", e);
+                    log.error("passportAccountId convert to accountId error", e);
                 }
             }
         }
