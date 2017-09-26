@@ -1,7 +1,7 @@
 package com.souche.test;
 
 import com.souche.db.model.User;
-import com.souche.db.utils.ObjectOutputTool;
+import com.souche.db.tool.ObjectOutputTool;
 
 /**
  * Created by dubiao on 2017/9/26.
