@@ -1,18 +1,21 @@
 package com.souche.test;
 
+import com.google.common.collect.Maps;
+
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.EnumSet;
 import java.util.List;
 
 /**
  * Created by dubiao on 2017/9/11.
  */
-public class B {
+public class CollectionsTest {
 
     public static void main(String[] args) {
         List<String> stringArrayList = new ArrayList<String>();
-        stringArrayList.add("A");
-        stringArrayList.add("B");
+        stringArrayList.add("IfelseTest");
+        stringArrayList.add("CollectionsTest");
         stringArrayList.add("C");
         stringArrayList.add("D");
         stringArrayList.add("E");
@@ -30,6 +33,10 @@ public class B {
         Collections.shuffle(stringArrayList);
 
         System.out.println(stringArrayList);
+
+        Boolean.valueOf(true);
+
+        Maps.newHashMap();
 
 
 

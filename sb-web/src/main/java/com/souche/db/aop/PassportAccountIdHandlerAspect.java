@@ -29,7 +29,6 @@ import java.util.List;
 @Slf4j
 public class PassportAccountIdHandlerAspect {
 
-   
 
     //private PersonRemoteService personRemoteService;
 
@@ -37,8 +36,9 @@ public class PassportAccountIdHandlerAspect {
     //this.personRemoteService = personRemoteService;
     //}
     @Pointcut("execution(public * com.souche.db.service.UserService.*(..))")
-    public void aspect(){
+    public void aspect() {
     }
+
     /**
      * 如何切入
      *
