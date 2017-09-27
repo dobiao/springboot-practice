@@ -32,7 +32,7 @@ public class UserController {
     @RequestMapping("/test1")
     @ResponseBody
     @Validate("zxc")
-    public User getUserInfo1(@RequestParam("age") Integer age) {
+    public User getUserInfo1(@RequestParam("age") Integer age,@RequestParam("token") String token) {
         log.info("age[{}]", age);
         return userService.getUserInfo(age);
     }
