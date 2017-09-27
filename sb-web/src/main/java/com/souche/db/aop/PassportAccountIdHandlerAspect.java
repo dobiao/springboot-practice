@@ -2,6 +2,8 @@ package com.souche.db.aop;
 
 
 import com.souche.db.annotation.PassportAccountIdHandler;
+import com.souche.db.mapper.UserMapper;
+import com.souche.db.service.UnifiedIdService;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -10,6 +12,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.thymeleaf.util.StringUtils;
 
@@ -36,8 +39,14 @@ public class PassportAccountIdHandlerAspect {
     //this.personRemoteService = personRemoteService;
     //}
 
+
+    @Autowired
+    private UnifiedIdService unifiedIdService;
+
+
     @Pointcut("execution(public * com.souche.db.controller..*(..))")
-    public void aspect(){}
+    public void aspect() {
+    }
 
     /**
      * 如何切入
@@ -96,6 +105,17 @@ public class PassportAccountIdHandlerAspect {
             // 获取方法形参的具体参数
             Object param = args[i];
             try {
+
+                Integer accountId = unifiedIdService.getNewAge(Integer.valueOf(param.toString()));
+
+                if (accountId != null) {
+                    if (args[i].getClass().getSimpleName().equals("String")) {
+                        args[i] = accountId.toString();
+                    } else if (args[i].getClass().getSimpleName().equals("Long")) {
+                        args[i] = accountId;
+                    }
+                }
+
                /* PojoResult<Long> accountId = personRemoteService.getAccountIdByPassportAccountId(Long.valueOf(param.toString()));
                 if (accountId != null && accountId.getContent() != null) {
                     if (args[i].getClass().getSimpleName().equals("String")) {
@@ -104,10 +124,6 @@ public class PassportAccountIdHandlerAspect {
                         args[i] = accountId.getContent();
                     }
                 }*/
-
-
-                args[i] = 111L;
-
 
             } catch (RuntimeException e) {
                 log.error("passportAccountId convert to accountId error", e);
