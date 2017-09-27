@@ -1,7 +1,8 @@
 package com.souche.db;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.log4j.Logger;
+
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -20,11 +21,11 @@ import javax.sql.DataSource;
 @SpringBootApplication
 @ComponentScan
 @MapperScan("com.souche.db.mapper")
+@Slf4j
 public class Application {
-    private static Logger logger = Logger.getLogger(Application.class);
 
     @Bean
-    @ConfigurationProperties(prefix="spring.datasource")
+    @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource dataSource() {
         return new org.apache.tomcat.jdbc.pool.DataSource();
     }
@@ -47,13 +48,12 @@ public class Application {
         return new DataSourceTransactionManager(dataSource());
     }
 
-
     /**
      * Start
      */
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
-        logger.info("SpringBoot Start Success");
+        log.info("SpringBoot Start Success");
     }
 
 }

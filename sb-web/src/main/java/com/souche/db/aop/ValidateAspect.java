@@ -1,6 +1,7 @@
 package com.souche.db.aop;
 
 import com.souche.db.annotation.Validate;
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 @Configuration
+@Slf4j
 public class ValidateAspect {
 
 
@@ -23,20 +25,15 @@ public class ValidateAspect {
         if ("zxc".equals(validate.value())) {
             //将执行的目标方法最后一个参数修改,没有参数会报错,必须是基本类型
             String param = (String) proceed.getArgs()[proceed.getArgs().length - 1];
-            proceed.getArgs()[proceed.getArgs().length - 1]= "被 ValidateAspect改变的值 " + param;
+            proceed.getArgs()[proceed.getArgs().length - 1] = "被 ValidateAspect改变的值 " + param;
         }
         try {
             result = proceed.proceed(proceed.getArgs());
-        }catch (Throwable e) {
-            e.printStackTrace();
+        } catch (Throwable e) {
+            log.error("异常", e.getCause());
         }
         return result;
     }
-
-
-
-
-
 
 
 }

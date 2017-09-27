@@ -13,3 +13,4 @@ springboot-practice.iml
 /sb-common/target/
 /sb-api/target/
 
+/sb-web/src/main/resources/application.properties

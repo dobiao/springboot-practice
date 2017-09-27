@@ -2,8 +2,8 @@ package com.souche.db.aop;
 
 import com.souche.db.annotation.MethodCache;
 import com.souche.db.cache.CacheService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -20,10 +20,8 @@ import java.lang.reflect.Method;
  */
 @Aspect
 @Component
+@Slf4j
 public class MethodCacheAspect {
-
-    private static Logger logger = Logger.getLogger(MethodCacheAspect.class);
-    private static final String KEY = "test";
 
     @Autowired
     private CacheService cacheService;
@@ -36,14 +34,13 @@ public class MethodCacheAspect {
         String cacheKey = getCacheKey(joinPoint);
         String s = cacheService.get(cacheKey);
         if (s != null) {
-
-            //logger.info("cache hit，key [{}]", cacheKey);
+            log.info("cache hit，key: [{}],value [{}]", cacheKey, s);
             return s;
         } else {
-            //logger.info("cache miss，key [{}]", cacheKey);
+            log.info("cache miss，key [{}]", cacheKey);
             Object result = joinPoint.proceed(joinPoint.getArgs());
             if (result == null) {
-                //logger.error("fail to get data from source，key [{}]", cacheKey);
+                log.error("fail to get data from source，key [{}]", cacheKey);
             } else {
                 MethodCache methodCache = getAnnotation(joinPoint, MethodCache.class);
                 cacheService.set(cacheKey, result.toString(), methodCache.expire());

@@ -3,7 +3,7 @@ package com.souche.test;
 /**
  * Created by dubiao on 2017/9/13.
  */
-public class A {
+public class IfelseTest {
 
     public static void main(String[] args) {
         itemVehicleVesselTaxCalc(18);
