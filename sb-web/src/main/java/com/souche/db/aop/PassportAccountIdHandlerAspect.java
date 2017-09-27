@@ -33,6 +33,7 @@ import java.util.List;
 public class PassportAccountIdHandlerAspect {
 
 
+    @Autowired
     private UnifiedIdService unifiedIdService;
 
     public void setUnifiedIdService(UnifiedIdService unifiedIdService) {
@@ -101,6 +102,8 @@ public class PassportAccountIdHandlerAspect {
             Object oldAge = args[i];
             try {
                 Integer newAge = unifiedIdService.getNewAge(Integer.parseInt(oldAge.toString()));
+                log.info("getNewAge", newAge);
+
                 if (newAge != null) {
                     // 如果参数类型为String，则将类型转换为String，再复制到原来的参数位置。
                     if (args[i].getClass().getSimpleName().equals("String")) {

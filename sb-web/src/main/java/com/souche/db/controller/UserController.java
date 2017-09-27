@@ -33,7 +33,7 @@ public class UserController {
     @RequestMapping("/test1")
     @ResponseBody
     @Validate("zxc")
-    public User getUserInfo1(@RequestParam("age") Integer age,@RequestParam("token") String token) {
+    public User getUserInfo1(@RequestParam("age") Integer age, @RequestParam("token") String token) {
         log.info("age[{}]", age);
         return userService.getUserInfo(age);
     }
@@ -57,7 +57,7 @@ public class UserController {
 
     @RequestMapping("/test4")
     @ResponseBody
-    public String addUser(@PassportAccountIdHandler String user){
+    public String addUser(@PassportAccountIdHandler String user) {
         //userService.createUser(user);
         return "添加成功";
     }

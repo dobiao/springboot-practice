@@ -13,7 +13,7 @@ public class BlockingQueueTest {
 
         BlockingQueue<String> b = new ArrayBlockingQueue<String>(5);
 
-        for (int i= 0; i<10;i++)
+        for (int i = 0; i < 10; i++)
 
         {
             b.add("sdsd");
