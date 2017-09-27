@@ -17,7 +17,7 @@ public class UserService {
     @Autowired
     private UserMapper userMapper;
 
-    public User getUserInfo(Integer age){
+    public User getUserInfo(@PassportAccountIdHandler Integer age){
         User user=userMapper.findUserInfo(age);
         //User user=null;
         return user;
@@ -27,6 +27,5 @@ public class UserService {
         if (user == null || StringUtils.isEmpty(user.getName())) return;
         String name = user.getName();
         // TODO
-        return;
     }
 }

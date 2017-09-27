@@ -1,6 +1,7 @@
 package com.souche.db.controller;
 
 import com.souche.db.annotation.MethodCache;
+import com.souche.db.annotation.PassportAccountIdHandler;
 import com.souche.db.annotation.Validate;
 import com.souche.db.model.User;
 import com.souche.db.service.UserService;
@@ -52,5 +53,12 @@ public class UserController {
     @MethodCache(expire = 10)
     public String getUserInfo3(@RequestParam("age") Integer age) {
         return userService.getUserInfo(age).getName();
+    }
+
+    @RequestMapping("/test4")
+    @ResponseBody
+    public String addUser(@PassportAccountIdHandler String user){
+        //userService.createUser(user);
+        return "添加成功";
     }
 }

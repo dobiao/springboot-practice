@@ -35,9 +35,9 @@ public class PassportAccountIdHandlerAspect {
     //public void setPersonRemoteService(PersonRemoteService personRemoteService) {
     //this.personRemoteService = personRemoteService;
     //}
-    @Pointcut("execution(public * com.souche.db.service.UserService.*(..))")
-    public void aspect() {
-    }
+
+    @Pointcut("execution(public * com.souche.db.controller..*(..))")
+    public void aspect(){}
 
     /**
      * 如何切入
@@ -132,7 +132,7 @@ public class PassportAccountIdHandlerAspect {
         for (Field field : declaredFields) {
             if (StringUtils.equals(field.getName(), annotation.value())) {
                 field.setAccessible(true);
-                Long account = Long.parseLong(field.get(args[i]).toString());
+                //Long account = Long.parseLong(field.get(args[i]).toString());
                 try {
                     //PojoResult<Long> accountId = personRemoteService.getAccountIdByPassportAccountId(account);
 
