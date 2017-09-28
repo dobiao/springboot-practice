@@ -5,4 +5,5 @@
 ###v1.0.1实现了三个注解MethodCache，PassportAccountIdHandler，Validate
 ####MethodCache，缓存方法的返回值，目前功能还需要调试
 ####PassportAccountIdHandler，自动转换入参
-####Validate校验请求参数的token
+####Authorization校验请求参数的token
+####Validate校验方法的入参
