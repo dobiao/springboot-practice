@@ -2,7 +2,7 @@ package com.souche.db.controller;
 
 import com.souche.db.annotation.MethodCache;
 import com.souche.db.annotation.PassportAccountIdHandler;
-import com.souche.db.annotation.Validate;
+import com.souche.db.annotation.Authorization;
 import com.souche.db.model.User;
 import com.souche.db.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -33,7 +33,7 @@ public class UserController {
 
     @RequestMapping("/test1")
     @ResponseBody
-    @Validate("zxc")
+    @Authorization("zxc")
     public User getUserInfo1(@RequestParam("age") Integer age, @RequestParam("token") String token) {
         log.info("age[{}]", age);
         return userService.getUserInfo(age);
