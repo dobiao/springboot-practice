@@ -97,6 +97,13 @@
             <version>${mapstruct.version}</version>
             <scope>provided</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/net.sf.oval/oval -->
+        <dependency>
+            <groupId>net.sf.oval</groupId>
+            <artifactId>oval</artifactId>
+            <version>1.87</version>
+        </dependency>
+
 
     </dependencies>
 
