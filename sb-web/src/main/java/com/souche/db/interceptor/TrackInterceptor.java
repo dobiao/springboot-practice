@@ -21,26 +21,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class TrackInterceptor extends HandlerInterceptorAdapter {
-	final static Logger LOGGER_TRACK	= LoggerFactory.getLogger("track");
-	@Autowired
-	//RedisLockRepository	redisLockRepository;
+    final static Logger LOGGER_TRACK = LoggerFactory.getLogger("track");
 
-	@Override
-	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
-		request.setAttribute("requestTime", System.currentTimeMillis());
-		/*if (StringUtils.isNotBlank(AuthNHolder.userId()) && request.getMethod().equalsIgnoreCase("post")) {
-			String ip = CommonUtils.getIp(request);
+    @Autowired
+    //RedisLockRepository	redisLockRepository;
+
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
+        request.setAttribute("requestTime", System.currentTimeMillis());
+        /*if (StringUtils.isNotBlank(AuthNHolder.userId()) && request.getMethod().equalsIgnoreCase("post")) {
+            String ip = CommonUtils.getIp(request);
 			if (!redisLockRepository.lock(request.getRequestURI() + AuthNHolder.userId() + ip, 3)) { // 3s内无法重复请求同个接口，除非已返回响应
 				return false;
 			}
 			return true;
 		}*/
-		return true;
-	}
+        return true;
+    }
 
-	@Override
-	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
-			throws Exception {
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
+            throws Exception {
 		/*String ip = CommonUtils.getIp(request);
 		String uri = request.getRequestURI();
 		if (StringUtils.isNotBlank(AuthNHolder.userId()) && request.getMethod().equalsIgnoreCase("post")) {
@@ -50,5 +51,7 @@ public class TrackInterceptor extends HandlerInterceptorAdapter {
 		String params = JSONObject.toJSONString(request.getParameterMap());
 		LOGGER_TRACK.info("{}{},{},{},{}__{}ms", (costTime > 3000 ? "slow-->" : ""), uri, params,
 				AuthNHolder.userPhone(), ip, costTime);
-	}*/
+				*/
+    }
 }
+

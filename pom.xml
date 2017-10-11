@@ -23,6 +23,7 @@
         <module>sb-common</module>
         <module>sb-core</module>
         <module>sb-web</module>
+        <module>sb-app</module>
     </modules>
 
     <properties>

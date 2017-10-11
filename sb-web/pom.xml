@@ -63,11 +63,7 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
-        <!-- freemaker依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-freemarker</artifactId>
-        </dependency>
+
     </dependencies>
 
 </project>

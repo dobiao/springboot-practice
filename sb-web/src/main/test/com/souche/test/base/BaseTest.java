@@ -1,7 +1,7 @@
 package com.souche.test.base;
 
 import com.alibaba.fastjson.JSON;
-import com.souche.db.Application;
+import com.souche.db.ApplicationWeb;
 import com.souche.db.tool.ObjectOutputTool;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ import static com.alibaba.fastjson.serializer.SerializerFeature.*;
  * Created by dubiao on 2017/9/26.
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = Application.class)
+@SpringBootTest(classes = ApplicationWeb.class)
 public class BaseTest {
 
     @Autowired
