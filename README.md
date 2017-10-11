@@ -26,15 +26,13 @@ VALUES
 UNLOCK TABLES;
 
 ```
-#####2、运行Application.java 
+#####2、运行ApplicationWeb.java/ApplicationApp.java
 ```
 mvn spring-boot:run
 log出现：SpringBoot Start Success，说明启动成功
 ```
-##访问API文档:
+##启动ApplicationApp.java后可以访问API文档:
 http://localhost:8080/swagger/index.html 即可在线查看API手册和调试API。
-
-
 
 ## 如果部署到Tomcat中，需要稍微修改一下
 
