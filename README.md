@@ -32,7 +32,13 @@ mvn spring-boot:run
 log出现：SpringBoot Start Success，说明启动成功
 ```
 ##启动ApplicationApp.java后可以访问API文档:
-http://localhost:8080/swagger/index.html 即可在线查看API手册和调试API。
+http://localhost:8081/swagger/index.html 即可在线查看API手册和调试API。
+
+##sb-app对应的端口号为8081:
+该模块集成了swagger
+##sb-web对应的端口号为8080:
+该模块集成了freemaker
+
 
 ## 如果部署到Tomcat中，需要稍微修改一下
 
