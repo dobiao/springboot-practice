@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.PlatformTransactionManager;
 
@@ -24,6 +25,7 @@ import javax.sql.DataSource;
 @MapperScan("com.souche.db.mapper")
 @Slf4j
 @EnableScheduling
+@EnableAsync
 public class ApplicationWeb {
 
     @Bean
