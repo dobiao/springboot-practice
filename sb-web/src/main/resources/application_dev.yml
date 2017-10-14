@@ -1,0 +1,36 @@
+server:
+  port: 8090
+  session-timeout: 30
+  tomcat.max-threads: 0
+  tomcat.uri-encoding: UTF-8
+
+
+spring:
+  profiles: dev
+    thymeleaf.prefix: classpath:/templates
+    aop.auto: true
+   #freemaker
+    freemarker.suffix: .ftl
+    freemarker.templateEncoding: UTF-8
+    freemarker.templateLoaderPath: classpath:/templates/
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=gbk&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: admin
+  logging:
+    config: classpath:logback.xml
+
+
+jpa:
+    database : MYSQL
+    show-sql : true
+    hibernate:
+      ddl-auto : update
+      naming-strategy : org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect : org.hibernate.dialect.MySQL5Dialect
+
+person:
+   age：12

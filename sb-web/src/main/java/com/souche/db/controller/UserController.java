@@ -5,6 +5,7 @@ import com.souche.db.annotation.PassportAccountIdHandler;
 import com.souche.db.annotation.Authorization;
 import com.souche.db.model.User;
 import com.souche.db.service.UserService;
+import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,6 +37,7 @@ public class UserController {
     @Authorization("zxc")
     public User getUserInfo1(@RequestParam("age") Integer age, @RequestParam("token") String token) {
         log.info("age[{}]", age);
+
         return userService.getUserInfo(age);
     }
 

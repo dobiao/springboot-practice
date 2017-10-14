@@ -1,5 +1,6 @@
 package com.souche.db;
 
+import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -55,7 +56,11 @@ public class ApplicationWeb {
      */
     public static void main(String[] args) {
         SpringApplication.run(ApplicationWeb.class, args);
+        System.out.println("SpringBoot Start Success");
         log.info("SpringBoot Start Success");
+
+
+
     }
 
 }

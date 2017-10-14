@@ -22,6 +22,9 @@ public class SwaggerConfig {
 
 
     public SwaggerSpringMvcPlugin customImplementation() {
+
+
+
         return new SwaggerSpringMvcPlugin(this.springSwaggerConfig)
                 .apiInfo(new ApiInfo("api", "desc", null, null, null, null))
                 .useDefaultResponseMessages(false)
