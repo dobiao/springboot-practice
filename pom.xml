@@ -24,6 +24,7 @@
         <module>sb-core</module>
         <module>sb-web</module>
         <module>sb-app</module>
+        <module>sb-job</module>
     </modules>
 
     <properties>

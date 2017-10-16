@@ -25,7 +25,6 @@ import javax.sql.DataSource;
 @ComponentScan
 @MapperScan("com.souche.db.mapper")
 @Slf4j
-@EnableScheduling
 @EnableAsync
 public class ApplicationWeb {
 
