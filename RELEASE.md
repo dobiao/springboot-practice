@@ -8,3 +8,4 @@
 ####Authorization校验请求参数的token
 ####Validate校验方法的入参
 ###v2.0.0新增app接口模块
+###v3.0.0分离job为单独模块
