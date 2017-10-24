@@ -26,7 +26,7 @@ VALUES
 UNLOCK TABLES;
 
 ```
-#####2、运行ApplicationWeb.java/ApplicationApp.java
+#####2、运行ApplicationWeb.java/ApplicationApp.java/ApplicationJob.java
 ```
 mvn spring-boot:run
 log出现：SpringBoot Start Success，说明启动成功
