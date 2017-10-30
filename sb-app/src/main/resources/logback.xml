@@ -1,56 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+    <logger name="org.springframework.web" level="INFO"/>
+    <logger name="org.springboot.sample" level="TRACE" />
 
-    <property name="LOG_DIR" value="${APP_HOME}/logs"/>
+    
 
-
-    <include resource="org/springframework/boot/logging/logback/base.xml"/>
-    <!-- 日志输出的通道 -->
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <!-- encoder 默认配置为PatternLayoutEncoder -->
-        <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
-            </pattern>
-        </encoder>
-    </appender>
-    <!-- 按照每天生成日志文件 -->
-    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOG_DIR}/logs/sb.log</file>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!--日志文件输出的文件名-->
-            <FileNamePattern>${LOG_DIR}/sb.%d{yyyy-MM-dd}.log</FileNamePattern>
-            <MaxHistory>30</MaxHistory>
-        </rollingPolicy>
-        <layout class="ch.qos.logback.classic.PatternLayout">
-            <!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
-            </pattern>
-        </layout>
-        <!--日志文件最大的大小-->
-        <!-- <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-          <MaxFileSize>10MB</MaxFileSize>
-        </triggeringPolicy> -->
-    </appender>
-
-    <!-- 指定某一个包或者某一个类的打印级别以及是否传入root进行打印 -->
-    <!-- addtivity:是否向上级loger传递打印信息。默认是true。-->
-    <!-- <loger>可以包含零个或多个<appender-ref>元素，标识这个appender将会添加到这个loger。-->
-    <!-- name:用来指定受此loger约束的某一个包或者具体的某一个类。-->
-    <!-- level:
-        用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，还有一个特俗值INHERITED或者同义词NULL，代表强制执行上级的级别。
-        如果未设置此属性，那么当前loger将会继承上级的级别。-->
-    <logger name="jdbc.sqltiming" level="DEBUG"/>
-    <logger name="com.ibatis" level="DEBUG"/>
-    <logger name="com.ibatis.common.jdbc.SimpleDataSource" level="DEBUG"/>
-    <logger name="com.ibatis.common.jdbc.ScriptRunner" level="DEBUG"/>
-    <logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" level="DEBUG"/>
-    <logger name="java.sql.Connection" level="DEBUG"/>
-    <logger name="java.sql.Statement" level="DEBUG"/>
-    <logger name="java.sql.PreparedStatement" level="DEBUG"/>
-    <!-- 也是<loger>元素，但是它是根loger。只有一个level属性，应为已经被命名为"root". -->
-    <root level="DEBUG">
-        <appender-ref ref="FILE"/>
-        <!-- <appender-ref ref="STDOUT"/> -->
-    </root>
 </configuration>
