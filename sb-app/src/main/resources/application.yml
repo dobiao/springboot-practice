@@ -4,32 +4,23 @@ server:
   tomcat.max-threads: 0
   tomcat.uri-encoding: UTF-8
 
-# mysql
 spring:
-    # 环境 dev|test|dev
-    profiles:
-    	 thymeleaf.prefix: classpath:/templates
-    	 aop.auto: true
-   		#freemaker
-    	 freemarker.suffix: .ftl
-     	 freemarker.templateEncoding: UTF-8
-         freemarker.templateLoaderPath: classpath:/templates/
-        active: dev
-    datasource:
-        type: com.alibaba.druid.pool.DruidDataSource
-        driverClassName: com.mysql.jdbc.Driver
-    logging:
-    	config: classpath:logback.xml
-    # jackson时间格式化
-    jackson:
-        time-zone: GMT+8
-        date-format: yyyy-MM-dd HH:mm:ss
-    http:
-        multipart:
-        max-file-size: 100MB
-        max-request-size: 100MB
-        enabled: true
-     redis:
+  profiles:
+    thymeleaf.prefix: classpath:/templates
+    aop.auto: true
+    active: dev
+   #freemaker
+    freemarker.suffix: .ftl
+    freemarker.templateEncoding: UTF-8
+    freemarker.templateLoaderPath: classpath:/templates/
+  logging:
+    config: classpath:logback.xml
+
+ # jackson时间格式化
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  redis:
           open: false  # 是否开启redis缓存  true开启   false关闭
           database: 0
           host: redis.open.renren.io
@@ -50,3 +41,4 @@ spring:
     properties:
       hibernate:
         dialect : org.hibernate.dialect.MySQL5Dialect
+
