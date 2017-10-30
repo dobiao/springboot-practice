@@ -18,6 +18,8 @@ spring:
     datasource:
         type: com.alibaba.druid.pool.DruidDataSource
         driverClassName: com.mysql.jdbc.Driver
+    logging:
+    	config: classpath:logback.xml
     # jackson时间格式化
     jackson:
         time-zone: GMT+8
@@ -48,16 +50,3 @@ spring:
     properties:
       hibernate:
         dialect : org.hibernate.dialect.MySQL5Dialect
-     
-    # 指定静态资源的路径
-    resources:
-        static-locations: classpath:/static/,classpath:/views/
-
-# Mybatis配置
-#mybatis:
-   # mapperLocations: classpath:mapper/**/*.xml
-    #configLocation: classpath:mybatis.xml
-
-logging:
-    config: classpath:logback.xml
-    
