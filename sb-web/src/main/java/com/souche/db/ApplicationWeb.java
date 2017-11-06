@@ -1,9 +1,7 @@
 package com.souche.db;
 
-import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSessionFactory;
-
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +13,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.scheduling.annotation.EnableAsync;
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
@@ -27,6 +24,7 @@ import javax.sql.DataSource;
 @Slf4j
 @EnableAsync
 public class ApplicationWeb {
+
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource")
@@ -57,11 +55,7 @@ public class ApplicationWeb {
      */
     public static void main(String[] args) {
         SpringApplication.run(ApplicationWeb.class, args);
-        System.out.println("SpringBoot Start Success");
         log.info("SpringBoot Start Success");
-
-
-
     }
 
 }

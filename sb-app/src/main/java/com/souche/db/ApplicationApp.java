@@ -2,7 +2,6 @@ package com.souche.db;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSessionFactory;
-
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.Banner;
@@ -55,13 +54,13 @@ public class ApplicationApp {
      * Start
      */
     public static void main(String[] args) {
-//        SpringApplication.run(ApplicationApp.class, args);
-    	//设置自己的banner
-        SpringApplication app = new SpringApplication(ApplicationApp.class);  
+        //设置自己的banner
+        SpringApplication app = new SpringApplication(ApplicationApp.class);
         app.setBannerMode(Banner.Mode.OFF);// 关闭启动Banner  
         app.setBannerMode(Banner.Mode.CONSOLE);// 输出Banner到控制台  
         app.setBannerMode(Banner.Mode.LOG);// 输出Banner到日志中  
-        app.run(args);  
+        app.run(args);
+        log.info("SpringBoot Start Success");
     }
 
 }
