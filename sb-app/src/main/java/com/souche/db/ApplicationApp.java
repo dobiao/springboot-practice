@@ -60,7 +60,7 @@ public class ApplicationApp {
         app.setBannerMode(Banner.Mode.CONSOLE);// 输出Banner到控制台  
         app.setBannerMode(Banner.Mode.LOG);// 输出Banner到日志中  
         app.run(args);
-        log.info("SpringBoot Start Success");
+        log.info("SpringBoot Application App Start Success");
     }
 
 }

@@ -2,7 +2,6 @@ package com.souche.db;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSessionFactory;
-
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -57,7 +56,7 @@ public class ApplicationJob {
      */
     public static void main(String[] args) {
         SpringApplication.run(ApplicationJob.class, args);
-        log.info("SpringBoot Start Success");
+        log.info("SpringBoot Application Job Start Success");
     }
 
 }

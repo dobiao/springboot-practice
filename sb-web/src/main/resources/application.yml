@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  port: 8080
   session-timeout: 30
   tomcat.max-threads: 0
   tomcat.uri-encoding: UTF-8

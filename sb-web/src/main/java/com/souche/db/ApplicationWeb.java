@@ -55,7 +55,7 @@ public class ApplicationWeb {
      */
     public static void main(String[] args) {
         SpringApplication.run(ApplicationWeb.class, args);
-        log.info("SpringBoot Start Success");
+        log.info("SpringBoot Application Web Start Success");
     }
 
 }
