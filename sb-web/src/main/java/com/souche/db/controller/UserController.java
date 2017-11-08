@@ -57,8 +57,8 @@ public class UserController {
 
     @RequestMapping("/test4")
     @ResponseBody
-    public String addUser(@PassportAccountIdHandler String user){
-        //userService.createUser(user);
+    public String addUser(@RequestParam User user){
+        userService.createUser(user);
         return "添加成功";
     }
 }

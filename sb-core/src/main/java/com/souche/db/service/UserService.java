@@ -22,10 +22,9 @@ public class UserService {
         //User user=null;
         return user;
     }
-
-    public void createUser(@PassportAccountIdHandler("name") User user){
-        if (user == null || StringUtils.isEmpty(user.getName())) return;
-        String name = user.getName();
+    public void createUser(@PassportAccountIdHandler("age") User user){
+        if (user == null || StringUtils.isEmpty(user.getAge())) return;
+        Integer age = user.getAge();
         // TODO
     }
 }
