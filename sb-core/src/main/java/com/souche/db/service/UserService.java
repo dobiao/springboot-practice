@@ -17,8 +17,8 @@ public class UserService {
     @Autowired
     private UserMapper userMapper;
 
-    public User getUserInfo(@PassportAccountIdHandler Integer age){
-        User user=userMapper.findUserInfo(age);
+    public User getUserInfo(@PassportAccountIdHandler Integer age) {
+        User user = userMapper.findUserInfo(age);
         //User user=null;
         return user;
     }

@@ -8,8 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * Created by dubiao on 2017/9/27.
  */
-public class ControllerTest extends BaseTest{
-
+public class ControllerTest extends BaseTest {
 
 
     @Autowired
@@ -20,8 +19,6 @@ public class ControllerTest extends BaseTest{
 
         this.print(userService.getUserInfo(12));
     }
-
-
 
 
 }

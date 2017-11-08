@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.7.RELEASE</version>
+        <version>1.5.8.RELEASE</version>
     </parent>
 
     <modules>
@@ -23,6 +23,8 @@
         <module>sb-common</module>
         <module>sb-core</module>
         <module>sb-web</module>
+        <module>sb-app</module>
+        <module>sb-job</module>
     </modules>
 
     <properties>
@@ -34,6 +36,7 @@
         <java.version>1.8</java.version>
         <sl4j.version>1.7.12</sl4j.version>
         <lombok.version>1.16.8</lombok.version>
+        <mapstruct.version>1.1.0.Final</mapstruct.version>
 
     </properties>
 

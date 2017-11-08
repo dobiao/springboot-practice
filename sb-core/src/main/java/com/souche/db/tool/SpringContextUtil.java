@@ -44,9 +44,9 @@ public class SpringContextUtil implements ApplicationContextAware {
         checkApplicationContext();
         @SuppressWarnings("rawtypes")
         Map beanMaps = applicationContext.getBeansOfType(clazz);
-        if (beanMaps!=null && !beanMaps.isEmpty()) {
+        if (beanMaps != null && !beanMaps.isEmpty()) {
             return (T) beanMaps.values().iterator().next();
-        } else{
+        } else {
             return null;
         }
     }

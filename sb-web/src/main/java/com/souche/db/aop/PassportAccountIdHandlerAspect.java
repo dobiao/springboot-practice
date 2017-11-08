@@ -2,7 +2,6 @@ package com.souche.db.aop;
 
 
 import com.souche.db.annotation.PassportAccountIdHandler;
-import com.souche.db.mapper.UserMapper;
 import com.souche.db.service.UnifiedIdService;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -10,9 +9,6 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.thymeleaf.util.StringUtils;
 
@@ -31,8 +27,8 @@ import java.util.List;
 @Component
 @Slf4j
 public class PassportAccountIdHandlerAspect {
-
-
+    // @Autowired  这里不需要贴这个注解，因为unifiedIdService这个bean已经由@Service("unifiedIdService")创建好了
+    // 所以只需要使用setter就能给该类注入这个bean。
     private UnifiedIdService unifiedIdService;
 
     public void setUnifiedIdService(UnifiedIdService unifiedIdService) {
@@ -101,6 +97,8 @@ public class PassportAccountIdHandlerAspect {
             Object oldAge = args[i];
             try {
                 Integer newAge = unifiedIdService.getNewAge(Integer.parseInt(oldAge.toString()));
+                log.info("getNewAge", newAge);
+
                 if (newAge != null) {
                     // 如果参数类型为String，则将类型转换为String，再复制到原来的参数位置。
                     if (args[i].getClass().getSimpleName().equals("String")) {

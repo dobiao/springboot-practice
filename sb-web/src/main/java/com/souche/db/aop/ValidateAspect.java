@@ -1,39 +1,54 @@
 package com.souche.db.aop;
 
+
 import com.souche.db.annotation.Validate;
-import lombok.extern.slf4j.Slf4j;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
+import com.souche.db.tool.ValidateTools;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
-import org.springframework.context.annotation.Configuration;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-/**
- * Created by dubiao on 2017/9/14.
- */
-@Component
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+
+
 @Aspect
-@Configuration
-@Slf4j
+@Component
+@Order
 public class ValidateAspect {
+	
+	@Pointcut("@annotation(com.souche.db.annotation.Validate)")
+	public void execute() {
+	}
 
 
-    @Around("@annotation(validate)")// 定义注解类型的切点，只要方法上有该注解，都会匹配
-    public Object before(ProceedingJoinPoint proceed, Validate validate) {
-        System.out.println("ValidateAspect before method");
-        Object result = null;
-        if ("zxc".equals(validate.value())) {
-            //将执行的目标方法最后一个参数修改,没有参数会报错,必须是基本类型
-            String param = (String) proceed.getArgs()[proceed.getArgs().length - 1];
-            proceed.getArgs()[proceed.getArgs().length - 1] = "被 ValidateAspect改变的值 " + param;
-        }
-        try {
-            result = proceed.proceed(proceed.getArgs());
-        } catch (Throwable e) {
-            log.error("异常", e.getCause());
-        }
-        return result;
-    }
-
+	@Before("execute()")
+	public void doExecute(JoinPoint point) {
+		MethodSignature ms = (MethodSignature) point.getSignature();
+		Method method = ms.getMethod();
+		Object[] params = point.getArgs();
+		if (params == null || params.length == 0) {
+			return;
+		}
+		Annotation[][] paramAnnotations = method.getParameterAnnotations();
+		if (paramAnnotations == null || paramAnnotations.length == 0) {
+			return;
+		}
+		for (int i = 0; i < paramAnnotations.length; i++) {
+			Annotation[] annotations = paramAnnotations[i];
+			if (annotations == null || annotations.length == 0) {
+				continue;
+			}
+			for (Annotation annotation : annotations) {
+				if (annotation instanceof Validate) {
+					Validate validate = (Validate) annotation;
+					ValidateTools.validate(params[i], validate);
+				}
+			}
+		}
+	}
 
 }

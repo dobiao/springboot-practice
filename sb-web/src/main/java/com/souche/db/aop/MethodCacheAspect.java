@@ -34,7 +34,7 @@ public class MethodCacheAspect {
         String cacheKey = getCacheKey(joinPoint);
         String s = cacheService.get(cacheKey);
         if (s != null) {
-            log.info("cache hit，key: [{}],value [{}]", cacheKey,s);
+            log.info("cache hit，key: [{}],value [{}]", cacheKey, s);
             return s;
         } else {
             log.info("cache miss，key [{}]", cacheKey);
