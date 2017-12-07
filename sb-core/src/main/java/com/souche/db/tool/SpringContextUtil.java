@@ -17,19 +17,33 @@ public class SpringContextUtil implements ApplicationContextAware {
     private static ApplicationContext applicationContext;
 
 
-    //实现ApplicationContextAware接口的context注入函数, 将其存入静态变量.
+    /**
+     * 实现ApplicationContextAware接口的context注入函数, 将其存入静态变量.
+     *
+     * @param applicationContext
+     */
     public void setApplicationContext(ApplicationContext applicationContext) {
         SpringContextUtil.applicationContext = applicationContext;
     }
 
 
-    //取得存储在静态变量中的ApplicationContext.
+    /**
+     * 取得存储在静态变量中的ApplicationContext.
+     *
+     * @return
+     */
     public static ApplicationContext getApplicationContext() {
         checkApplicationContext();
         return applicationContext;
     }
 
-    //从静态变量ApplicationContext中取得Bean, 自动转型为所赋值对象的类型.
+    /**
+     * 从静态变量ApplicationContext中取得Bean, 自动转型为所赋值对象的类型.
+     *
+     * @param name
+     * @param <T>
+     * @return
+     */
     @SuppressWarnings("unchecked")
     public static <T> T getBean(String name) {
         checkApplicationContext();
@@ -37,8 +51,13 @@ public class SpringContextUtil implements ApplicationContextAware {
     }
 
 
-    //从静态变量ApplicationContext中取得Bean, 自动转型为所赋值对象的类型.
-    //如果有多个Bean符合Class, 取出第一个.
+    /**
+     * 从静态变量ApplicationContext中取得Bean, 自动转型为所赋值对象的类型.
+     * 如果有多个Bean符合Class, 取出第一个.
+     *
+     * @param clazz
+     * @return
+     */
     @SuppressWarnings("unchecked")
     public static <T> T getBean(Class<T> clazz) {
         checkApplicationContext();

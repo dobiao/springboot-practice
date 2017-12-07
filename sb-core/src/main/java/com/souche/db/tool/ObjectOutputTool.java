@@ -63,11 +63,6 @@ public class ObjectOutputTool {
 
             }
 
-			/*
-             * if (f.getType() == Address.class) { this.getPropertyString(obj ,
-			 * sb); }
-			 */
-
             sb.append(obj);
             sb.append("\n");
         }
@@ -89,8 +84,6 @@ public class ObjectOutputTool {
         } catch (SecurityException e) {
             e.printStackTrace();
         } catch (NoSuchMethodException e) {
-            // e.printStackTrace();
-
             return " can't find 'get" + methodName + "' method";
         }
 
