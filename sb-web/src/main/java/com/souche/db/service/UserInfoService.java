@@ -1,4 +1,4 @@
-package com.souche.db.Service;
+package com.souche.db.service;
 
 /**
  * Created by dubiao on 2017/12/15.

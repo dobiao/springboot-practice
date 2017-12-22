@@ -27,7 +27,7 @@ import java.util.List;
 @Component
 @Slf4j
 public class PassportAccountIdHandlerAspect {
-    // @Autowired  这里不需要贴这个注解，因为unifiedIdService这个bean已经由@Service("unifiedIdService")创建好了
+    // @Autowired  这里不需要贴这个注解，因为unifiedIdService这个bean已经由@service("unifiedIdService")创建好了
     // 所以只需要使用setter就能给该类注入这个bean。
     private UnifiedIdService unifiedIdService;
 
