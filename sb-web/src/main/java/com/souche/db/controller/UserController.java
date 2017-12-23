@@ -44,7 +44,7 @@ public class UserController {
     @RequestMapping("/test2")
     @ResponseBody
     public User getUserInfo2() {
-
+        
         User u = new User();
         u.setName("andy");
         userService.createUser(u);

@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 
 @EnableAutoConfiguration
 @SpringBootApplication
-@ComponentScan
+@ComponentScan(basePackages = {"com.souche.db.service"})
 @MapperScan("com.souche.db.mapper")
 @Slf4j
 @EnableAsync
