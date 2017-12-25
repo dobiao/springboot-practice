@@ -46,3 +46,7 @@ spring:
       hibernate:
         dialect : org.hibernate.dialect.MySQL5Dialect
 
+  ## Mybatis \u914d\u7f6e
+  mybatis:
+    typeAliasesPackage: com.souche.db.entity
+    mapperLocations: classpath:*.xml
