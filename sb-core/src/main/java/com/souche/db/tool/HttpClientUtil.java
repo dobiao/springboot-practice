@@ -26,7 +26,7 @@ public class HttpClientUtil {
      * @return
      */
     public static String doGet(String url){
-        return doGet(url, new HashMap<>(0));
+        return doGet(url, new HashMap<String, Object>(0));
     }
 
     /**
