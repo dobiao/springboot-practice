@@ -10,5 +10,4 @@ public class HelloWordController {
     //@Value("${jap.database}")
     private  String age;
 
-
 }

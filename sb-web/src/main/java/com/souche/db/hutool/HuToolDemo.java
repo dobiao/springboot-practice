@@ -3,6 +3,7 @@ package com.souche.db.hutool;
 import com.xiaoleilu.hutool.db.Entity;
 import com.xiaoleilu.hutool.db.SqlRunner;
 import com.xiaoleilu.hutool.io.resource.ClassPathResource;
+import com.xiaoleilu.hutool.io.resource.ResourceUtil;
 import com.xiaoleilu.hutool.json.JSONObject;
 import com.xiaoleilu.hutool.json.JSONUtil;
 import com.xiaoleilu.hutool.log.Log;
@@ -25,8 +26,8 @@ public class HuToolDemo {
         String address = new ClassPathResource("application.yml").getPath();
         System.out.println(address);
         // 这里不知道为什么没有readUtf8Str方法
-//        String text = ResourceUtil.readUtf8Str("application.yml");
-//        System.out.println(text);
+        String text = ResourceUtil.readUtf8Str("application.yml");
+        System.out.println(text);
     }
     public static void textJSON_Log(){
         String json = "[{\"title\":\"小猪\",\"flag\":0,\"orderby\":1,\"type\":1},{\"title\":\"袜子\",\"flag\":0,\"orderby\":2,\"type\":12},{\"title\":\"抱枕\",\"flag\":0,\"orderby\":3,\"type\":123},{\"title\":\"拖鞋\",\"flag\":0,\"orderby\":4,\"type\":1234}]";
