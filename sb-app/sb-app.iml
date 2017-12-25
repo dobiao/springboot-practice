@@ -111,5 +111,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:4.3.12.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.mangofactory:swagger-models:0.9.5" level="project" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.16.8" level="project" />
+    <orderEntry type="library" name="Maven: com.xiaoleilu:hutool-all:3.0.8" level="project" />
   </component>
 </module>
