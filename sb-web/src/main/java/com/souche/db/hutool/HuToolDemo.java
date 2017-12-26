@@ -8,6 +8,7 @@ import com.xiaoleilu.hutool.json.JSONObject;
 import com.xiaoleilu.hutool.json.JSONUtil;
 import com.xiaoleilu.hutool.log.Log;
 import com.xiaoleilu.hutool.log.LogFactory;
+import com.xiaoleilu.hutool.util.StrUtil;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -18,10 +19,19 @@ public class HuToolDemo {
 
     public static void main(String[] args) {
         textDBQuery();
-        textReadFile();
-        textJSON_Log();
+//        textReadFile();
+//        textJSON_Log();
+//        textStrUtil();
     }
 
+    //检测出Hutool的一个Bug,这个地方输出结果还是str,并没有替换成功
+    public static void textStrUtil(){
+        String str = "{0}bb";
+        String chars = "{0}";
+        String replacedStr = "aa";
+        System.out.println("替换之后的结果为: ");
+        System.out.print(StrUtil.replaceChars(str,chars,replacedStr));
+    }
     public static void textReadFile(){
         String address = new ClassPathResource("application.yml").getPath();
         System.out.println(address);
@@ -45,7 +55,7 @@ public class HuToolDemo {
 
     public static void textDBQuery(){
         try {
-            List<Entity> list = SqlRunner.create().findAll("t_banner");
+            List<Entity> list = SqlRunner.create().findAll("t_cardbins");
             System.out.println(list);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -54,7 +64,7 @@ public class HuToolDemo {
 
     public static void textDBUpdate(){
         try {
-            List<Entity> list = SqlRunner.create().findAll("t_banner");
+            List<Entity> list = SqlRunner.create().findAll("t_cardbins");
             System.out.println(list);
         } catch (SQLException e) {
             e.printStackTrace();

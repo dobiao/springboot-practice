@@ -1,0 +1,4 @@
+url = jdbc:mysql://www.xiaoshangxing.com:5847/sbpractice?useUnicode=true&characterEncoding=gbk&zeroDateTimeBehavior=convertToNull
+user = sbpractice
+pass = abc1073794822!
+driver = com.mysql.jdbc.Driver
