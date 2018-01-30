@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class UPermissionServiceImpl implements UPermissionService{
 
-    @Autowired
+    //@Autowired
     UPermissionDao permissionDao;
     @Override
     public List<UPermission> findPermissionByUid(Long id) {

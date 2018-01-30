@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class URoleServiceImpl implements URoleService{
 
-    @Autowired
+    //@Autowired
     private URoleDao uRoleDao;
 
     @Override
