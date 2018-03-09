@@ -14,8 +14,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.PlatformTransactionManager;
 import javax.sql.DataSource;
 
-@SpringBootApplication(scanBasePackages= {"com.souche.db.service"})
-@MapperScan("com.souche.db.mapper")
+@SpringBootApplication(scanBasePackages= {"com.souche.db"})
+@MapperScan("com.souche.db.dao")
 @Slf4j
 @EnableAsync
 public class ApplicationWeb {
