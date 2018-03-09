@@ -3,6 +3,11 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+import lombok.Data;
+
 
 
 /**
@@ -15,6 +20,8 @@ import java.util.List;
  * @date 2017-5-10 0:13:08
  * @version V1.0   
  */
+@Data
+@JsonInclude(Include.NON_NULL)
 public class UUser  implements Serializable {
 	 /** serialVersionUID. */
  	private static final long serialVersionUID =1493049839167L;
@@ -26,116 +33,6 @@ public class UUser  implements Serializable {
 	private Date createTime;//创建时间
 	private Date lastLoginTime;//最后登录时间
 	private Long status;//1:有效，0:禁止登录
-	
 	private List<String> roleStrlist;
 	private List<String> perminsStrlist;
-	
-	/**
-    * getting setting auto  generate
-    */
-	public void setId (Long id){
-		this.id=id;
-	}
-	
-	public Long getId(){
-		return id;
-	}
-	
-	
-	
-	public void setNickname (String nickname){
-		this.nickname=nickname;
-	}
-	
-	public String getNickname(){
-		return nickname;
-	}
-	
-	
-	
-	public void setEmail (String email){
-		this.email=email;
-	}
-	
-	public String getEmail(){
-		return email;
-	}
-	
-	
-	
-	public void setPswd (String pswd){
-		this.pswd=pswd;
-	}
-	
-	public String getPswd(){
-		return pswd;
-	}
-	
-	
-	
-	public void setCreateTime (Date createTime){
-		this.createTime=createTime;
-	}
-	
-	public Date getCreateTime(){
-		return createTime;
-	}
-	
-	
-	
-	public void setLastLoginTime (Date lastLoginTime){
-		this.lastLoginTime=lastLoginTime;
-	}
-	
-	public Date getLastLoginTime(){
-		return lastLoginTime;
-	}
-	
-	
-	
-	public void setStatus (Long status){
-		this.status=status;
-	}
-	
-	public Long getStatus(){
-		return status;
-	}
-	
-	
-	
-	//generate toString method
-	@Override
-	public String toString (){
-		return "UUser[id="+id
-		+",nickname="+nickname
-		+",email="+email
-		+",pswd="+pswd
-		+",createTime="+createTime
-		+",lastLoginTime="+lastLoginTime
-		+",status="+status+"]";
-	}
-
-	
-
-	public List<String> getRoleStrlist() {
-		return roleStrlist;
-	}
-
-	public void setRoleStrlist(List<String> roleStrlist) {
-		this.roleStrlist = roleStrlist;
-	}
-
-	public List<String> getPerminsStrlist() {
-		return perminsStrlist;
-	}
-
-	public void setPerminsStrlist(List<String> perminsStrlist) {
-		this.perminsStrlist = perminsStrlist;
-	}
-
-	
-
-	
-	
-	
 }

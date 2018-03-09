@@ -1,5 +1,8 @@
 package com.souche.db.entity;
 import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import lombok.Data;
 
 
 
@@ -13,43 +16,11 @@ import java.io.Serializable;
  * @date 2017-5-10 0:13:30
  * @version V1.0   
  */
+@Data
+@JsonInclude(Include.NON_NULL)
 public class UUserRole  implements Serializable {
 	 /** serialVersionUID. */
  	private static final long serialVersionUID =1493049839167L;
- 	
 	private Long uid;//用户ID
 	private Long rid;//角色ID
-	
-	
-	/**
-    * getting setting auto  generate
-    */
-	public void setUid (Long uid){
-		this.uid=uid;
-	}
-	
-	public Long getUid(){
-		return uid;
-	}
-	
-	
-	
-	public void setRid (Long rid){
-		this.rid=rid;
-	}
-	
-	public Long getRid(){
-		return rid;
-	}
-	
-	
-	
-	//generate toString method
-	@Override
-	public String toString (){
-		return "UUserRole[uid="+uid
-		+",rid="+rid+"]";
-	}
-	
-	
 }

@@ -11,11 +11,11 @@ import java.util.List;
 @Service
 public class URoleServiceImpl implements URoleService{
 
-    //@Autowired
+    @Autowired
     private URoleDao uRoleDao;
 
     @Override
-    public List<URole> findRoleByUid(Long	 obj){
+    public List<URole> findRoleByUid(Long obj){
         return uRoleDao.findRoleByUid(obj);
     }
 }

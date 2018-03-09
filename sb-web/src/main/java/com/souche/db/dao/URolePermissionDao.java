@@ -1,8 +1,9 @@
 package com.souche.db.dao;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import com.souche.db.constant.BaseDao;
 import com.souche.db.entity.URolePermission;
-import org.mapstruct.Mapper;
 
 @Mapper
 public interface URolePermissionDao extends BaseDao<URolePermission, Long> {

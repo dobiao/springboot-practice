@@ -1,0 +1,23 @@
+# Tomcat
+server:
+    tomcat:
+        uri-encoding: UTF-8
+        max-threads: 1000
+        min-spare-threads: 30
+    port: 8082
+    #connection-timeout: 5000
+
+spring:
+  profiles:
+    thymeleaf.prefix: classpath:/templates
+    aop.auto: true
+    active: dev
+   #freemaker
+    freemarker.suffix: .ftl
+    freemarker.templateEncoding: UTF-8
+    freemarker.templateLoaderPath: classpath:/templates/
+
+ # jackson时间格式化
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss

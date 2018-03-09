@@ -1,6 +1,11 @@
 package com.souche.db.entity;
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+import lombok.Data;
+
 
 
 /**
@@ -13,6 +18,8 @@ import java.io.Serializable;
  * @date 2017-5-10 0:00:45
  * @version V1.0   
  */
+@Data
+@JsonInclude(Include.NON_NULL)
 public class UPermission  implements Serializable {
 	 /** serialVersionUID. */
  	private static final long serialVersionUID =1493049839167L;
@@ -20,48 +27,4 @@ public class UPermission  implements Serializable {
 	private Long id;//
 	private String url;//url地址
 	private String name;//url描述
-	
-	
-	/**
-    * getting setting auto  generate
-    */
-	public void setId (Long id){
-		this.id=id;
-	}
-	
-	public Long getId(){
-		return id;
-	}
-	
-	
-	
-	public void setUrl (String url){
-		this.url=url;
-	}
-	
-	public String getUrl(){
-		return url;
-	}
-	
-	
-	
-	public void setName (String name){
-		this.name=name;
-	}
-	
-	public String getName(){
-		return name;
-	}
-	
-	
-	
-	//generate toString method
-	@Override
-	public String toString (){
-		return "UPermission[id="+id
-		+",url="+url
-		+",name="+name+"]";
-	}
-	
-	
 }

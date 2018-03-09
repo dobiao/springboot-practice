@@ -1,8 +1,9 @@
 package com.souche.db.dao;
 
+import org.apache.ibatis.annotations.Mapper;
+
 import com.souche.db.constant.BaseDao;
 import com.souche.db.entity.UUser;
-import org.mapstruct.Mapper;
 
 @Mapper
 public interface UUserDao extends BaseDao<UUser, Long> {

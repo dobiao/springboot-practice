@@ -1,5 +1,8 @@
 package com.souche.db.entity;
 import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import lombok.Data;
 
 
 
@@ -13,6 +16,8 @@ import java.io.Serializable;
  * @date 2017-5-10 0:12:26
  * @version V1.0   
  */
+@Data
+@JsonInclude(Include.NON_NULL)
 public class URole  implements Serializable {
 	 /** serialVersionUID. */
  	private static final long serialVersionUID =1493049839167L;
@@ -20,48 +25,5 @@ public class URole  implements Serializable {
 	private Long id;//
 	private String name;//角色名称
 	private String type;//角色类型
-	
-	
-	/**
-    * getting setting auto  generate
-    */
-	public void setId (Long id){
-		this.id=id;
-	}
-	
-	public Long getId(){
-		return id;
-	}
-	
-	
-	
-	public void setName (String name){
-		this.name=name;
-	}
-	
-	public String getName(){
-		return name;
-	}
-	
-	
-	
-	public void setType (String type){
-		this.type=type;
-	}
-	
-	public String getType(){
-		return type;
-	}
-	
-	
-	
-	//generate toString method
-	@Override
-	public String toString (){
-		return "URole[id="+id
-		+",name="+name
-		+",type="+type+"]";
-	}
-	
 	
 }

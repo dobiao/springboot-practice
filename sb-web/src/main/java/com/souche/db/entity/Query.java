@@ -1,6 +1,7 @@
 package com.souche.db.entity;
 
 import com.souche.db.constant.Constant;
+import lombok.Data;
 
 
 
@@ -8,6 +9,7 @@ import com.souche.db.constant.Constant;
  * 翻页查询 参数		
  * 
  */	
+@Data
 public class Query {
 
 	/**
@@ -62,46 +64,6 @@ public class Query {
 		this.pageNo = pageNo <= 0 ? 1 : pageNo;
 		this.pageSize = pageSize < 0 ? 0 : pageSize;
 		this.rowIndex = (this.pageNo - 1) * this.pageSize;
-		this.q = q;
-	}
-
-	public int getPageNo() {
-		return pageNo;
-	}
-
-	public void setPageNo(int pageNo) {
-		this.pageNo = pageNo;
-	}
-
-	public int getPageSize() {
-		return pageSize;
-	}
-
-	public void setPageSize(int pageSize) {
-		this.pageSize = pageSize;
-	}
-
-	public String getPageable() {
-		return pageable;
-	}
-
-	public void setPageable(String pageable) {
-		this.pageable = pageable;
-	}
-
-	public int getRowIndex() {
-		return rowIndex;
-	}
-
-	public void setRowIndex(int rowIndex) {
-		this.rowIndex = rowIndex;
-	}
-
-	public Object getQ() {
-		return q;
-	}
-
-	public void setQ(Object q) {
 		this.q = q;
 	}
 }

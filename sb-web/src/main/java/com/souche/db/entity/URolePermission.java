@@ -1,5 +1,8 @@
 package com.souche.db.entity;
 import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import lombok.Data;
 
 
 
@@ -13,43 +16,11 @@ import java.io.Serializable;
  * @date 2017-5-10 0:12:46
  * @version V1.0   
  */
+@Data
+@JsonInclude(Include.NON_NULL)
 public class URolePermission  implements Serializable {
 	 /** serialVersionUID. */
  	private static final long serialVersionUID =1493049839167L;
- 	
 	private Long rid;//角色ID
 	private Long pid;//权限ID
-	
-	
-	/**
-    * getting setting auto  generate
-    */
-	public void setRid (Long rid){
-		this.rid=rid;
-	}
-	
-	public Long getRid(){
-		return rid;
-	}
-	
-	
-	
-	public void setPid (Long pid){
-		this.pid=pid;
-	}
-	
-	public Long getPid(){
-		return pid;
-	}
-	
-	
-	
-	//generate toString method
-	@Override
-	public String toString (){
-		return "URolePermission[rid="+rid
-		+",pid="+pid+"]";
-	}
-	
-	
 }
