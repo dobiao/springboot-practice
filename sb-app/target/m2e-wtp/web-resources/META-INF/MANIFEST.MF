@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: sb-web
-Implementation-Version: 1.0.0-SNAPSHOT
-Built-By: sunnyday_PC
-Implementation-Vendor-Id: com.souche.db
-Build-Jdk: 1.8.0_151
-Implementation-URL: http://maven.apache.org/sb-app
-Created-By: Maven Integration for Eclipse
-
