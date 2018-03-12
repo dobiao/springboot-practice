@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.souche.db.mapper.UserMapper">
- 
-  <select id="findUserInfo" parameterType="java.lang.Integer" resultType="com.souche.db.model.User">
-    select u.name,u.age,u.password from user u where u.age =#{age}
-  </select>
- 
-</mapper>
