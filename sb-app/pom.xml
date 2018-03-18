@@ -12,7 +12,7 @@
 
     <artifactId>sb-app</artifactId>
     <packaging>war</packaging>
-    <name>sb-web</name>
+    <name>sb-app</name>
 
     <dependencies>
 
